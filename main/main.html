@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت آپارتمان</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="../first page/logo.png" alt="لوگو" class="logo">
+        </div>
+        <div class="sidebar-menu">
+            <a href="../profile/profile.html" class="menu-item">
+                <img src="profile-svgrepo-com.svg" alt="Profile" class="icon"> پروفایل کاربری
+            </a>
+            <a href="../firstpage/firstpage.html" class="menu-item">
+                <img src="exit-svgrepo-com.svg" alt="Exit" class="icon"> خروج
+            </a>
+        </div>
+    </nav>
+    
+
+    <main>
+        <section id="announcement-section">
+            <h2>اطلاعیه ها و اخبار مهم</h2>
+            <input type="text" placeholder="جستجو در عناوین اطلاعیه‌ها" class="search-bar">
+            <!-- Dynamic announcement content should be loaded here -->
+        </section>
+
+        <section id="comment-section">
+            <h2>نظرات و پیشنهادات</h2>
+            <textarea placeholder="افزودن نظر جدید"></textarea>
+            <button type="button" onclick="addComment()">ارسال نظر</button>
+            <!-- Dynamic comment content should be loaded here -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

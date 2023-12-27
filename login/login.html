@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود | مدیریت آپارتمان</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <img src="../first page/building.png" alt="Background Image" class="bg-image">    
+    <div class="login-page">
+        <header>
+            <img src="../first page/logo.png" alt="لوگوی مدیریت آپارتمان" class="logo">
+        </header>
+        <div class="login-panel">
+            <form class="login-form" action="#" method="post" onsubmit="return validateForm()">
+                <div class="form-title">
+                    <h2>ورود به حساب کاربری</h2>
+                </div>
+                <div class="form-field">
+                    <input type="text" id="username" name="username" placeholder=" " required>
+                    <label for="username">نام کاربری</label>
+                </div>
+                <div class="form-field">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <label for="password">رمز عبور</label>
+                </div>
+                <div class="action-items">
+                    <button type="submit" class="login-button">ورود</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>تمامی حقوق محفوظ است | برج پرداز © 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // Check if the page was loaded from a redirect
+        var isRedirected = sessionStorage.getItem('isRedirected');
+
+        // If redirected, clear the form fields
+        if (isRedirected) {
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            // Reset the isRedirected flag
+            sessionStorage.removeItem('isRedirected');
+        }
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the fields are not empty
+            if (username.trim() !== "" && password.trim() !== "") {
+                // Set the isRedirected flag before redirecting
+                sessionStorage.setItem('isRedirected', 'true');
+                // Redirect to the main page (replace "main_page.html" with your actual main page)
+                window.location.href = 'main_page.html';
+                return false; // Prevent form submission
+            } else {
+                // Display an alert or take other actions if fields are empty
+                alert("نام کاربری و رمز عبور را وارد کنید.");
+                return false; // Prevent form submission
+            }
+        }
+
+        // Add a back functionality to redirect to "firstpage.html"
+        document.addEventListener('DOMContentLoaded', function() {
+            var backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', function() {
+                window.location.href = '../first page/firstpage.html';
+            });
+        });
+    </script>
+</body>
+</html>
